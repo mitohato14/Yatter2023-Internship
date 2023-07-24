@@ -1064,7 +1064,29 @@ class MainActivity : AppCompatActivity() {
 
 ここまでの実装でパブリックタイムラインのUI実装全体が完了しました。  
 現状のままではアプリを起動してもアプリがクラッシュして見ることができないと思います。  
-DIの設定がまだできていないことが原因ですので次のDI層実装に進みましょう。  
+設定がまだできていない部分がありますので最後にその対応をしましょう。  
+
+## DI設定
+`di`ディレクトリ内にある`ViewModelModule`というファイルを開きます。  
+その中にコメントアウトされている`PublicTimelineViewModel`の設定を確認します。  
+行の先頭にある`//`を削除してコメントアウトを外し以下のようなコードにしましょう。  
+
+```Kotlin
+internal val viewModelModule = module {
+  viewModel { MainViewModel(get()) }
+  viewModel { PublicTimelineViewModel(get()) } // こちらの//を削除
+//  viewModel { PostViewModel(get(), get()) }
+  ...
+}
+```
+コードが赤く表示される可能性がありますので、そのコードにカーソルを当て `option + Enter`を押して`import class 'PublicTimelineViewModel'`を選択して必要なimport文を追加しましょう。
+
+![import_public_timeline_viewmodel](../image/1/import_public_timline_viewmodel.png)
+
+エラーが表示されなくなったら準備は完了です。  
+Android StudioのRunボタンを押下してアプリを実行し動作を確認しましょう。  
+
+今回はDIについて省略しましたが、気になる方は`appendix/3_DI実装`をご覧ください。  
 
 ## Appendix
 今回、UI構築を行う際にタイトルや`contentDescription`を文字列で直書きしています。  
