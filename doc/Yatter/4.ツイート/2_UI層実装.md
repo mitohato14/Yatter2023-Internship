@@ -423,3 +423,22 @@ class PostActivity: AppCompatActivity() {
 ```
 
 これでツイート機能画面のUI層実装は完了です。  
+
+# DI設定
+ツイート画面でもDIの設定を行いましょう。  
+`di`ディレクトリ内にある`ViewModelModule`というファイルを開きます。  
+その中にコメントアウトされている`PostViewModel`の設定を確認します。  
+行の先頭にある`//`を削除してコメントアウトを外し以下のようなコードにしましょう。  
+
+```Kotlin
+internal val viewModelModule = module {
+  viewModel { MainViewModel(get()) }
+  viewModel { PublicTimelineViewModel(get()) }
+  viewModel { PostViewModel(get(), get()) } // こちらの//を削除
+//  viewModel { RegisterAccountViewModel(get()) }
+  viewModel { LoginViewModel(get()) }
+}
+```
+
+必要なimportを行ったらRunボタンでアプリを起動してみましょう。  
+起動することを確認できたら次のドキュメントに進みます。  

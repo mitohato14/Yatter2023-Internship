@@ -607,3 +607,22 @@ override fun onCreate(savedInstanceState: Bundle?) {
 ```
 
 ここまで実装できたらログイン画面のUI実装は完了です。  
+
+# DI設定
+パブリックタイムライン画面でも実施したようにログイン画面でもDIの設定を行います。
+`di`ディレクトリ内にある`ViewModelModule`というファイルを開きます。  
+その中にコメントアウトされている`LoginViewModel`の設定を確認します。  
+行の先頭にある`//`を削除してコメントアウトを外し以下のようなコードにしましょう。  
+
+```Kotlin
+internal val viewModelModule = module {
+  viewModel { MainViewModel(get()) }
+  viewModel { PublicTimelineViewModel(get()) }
+//  viewModel { PostViewModel(get(), get()) }
+//  viewModel { RegisterAccountViewModel(get()) }
+  viewModel { LoginViewModel(get()) } // こちらの//を削除
+}
+```
+
+エラーが表示されたらパブリックタイムラインの時と同様に、`option + Enter`で解消しましょう。  
+エラーが無くなったらRunボタンでアプリが起動することを確認します。  
