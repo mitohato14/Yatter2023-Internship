@@ -51,3 +51,11 @@ CREATE TABLE `status_medias` (
   INDEX (`status_id`),
   INDEX (`media_id`)
 );
+
+INSERT INTO `account` (id, username, password_hash, display_name, avatar) VALUES
+(1, 'yt8492', 'password', 'mayamito', 'https://avatars.githubusercontent.com/u/39693306?v=4'),
+(2, 'mitohato', 'password', 'mito', 'https://avatars.githubusercontent.com/u/19385268?v=4');
+
+INSERT INTO `status` (account_id, content) VALUES
+(1, 'Hello World!'),
+(2, 'Hello Yatter!');
