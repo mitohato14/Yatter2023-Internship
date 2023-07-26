@@ -235,7 +235,7 @@ fun onClickLogin() {
         ) // 2
     ) {
       is LoginUseCaseResult.Success -> {
-        _navigateToAllTimeline.value = Unit // 3
+        _navigateToPublicTimeline.value = Unit // 3
     }
 
       is LoginUseCaseResult.Failure -> {
