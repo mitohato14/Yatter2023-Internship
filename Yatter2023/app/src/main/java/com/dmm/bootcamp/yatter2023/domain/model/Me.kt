@@ -9,8 +9,8 @@ abstract class Me(
   note: String?,
   avatar: URL?,
   header: URL?,
-  followingCount: Int?,
-  followerCount: Int?,
+  followingCount: Int,
+  followerCount: Int,
 ) : Account(
   id,
   username,

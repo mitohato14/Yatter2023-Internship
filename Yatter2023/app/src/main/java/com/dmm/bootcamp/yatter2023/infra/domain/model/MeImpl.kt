@@ -13,8 +13,8 @@ class MeImpl(
   note: String?,
   avatar: URL?,
   header: URL?,
-  followingCount: Int?,
-  followerCount: Int?,
+  followingCount: Int,
+  followerCount: Int,
 ) : Me(
   id = id,
   username = username,

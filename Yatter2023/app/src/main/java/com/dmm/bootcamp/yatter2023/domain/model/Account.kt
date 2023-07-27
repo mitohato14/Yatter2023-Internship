@@ -10,8 +10,8 @@ abstract class Account(
   val note: String?,
   val avatar: URL?,
   val header: URL?,
-  val followingCount: Int?,
-  val followerCount: Int?,
+  val followingCount: Int,
+  val followerCount: Int,
 ) : Entity<AccountId>(id) {
 
   abstract suspend fun followings(): List<Account>
