@@ -1,6 +1,5 @@
 package com.dmm.bootcamp.yatter2023.infra.domain.converter
 
-import com.dmm.bootcamp.yatter2023.BuildConfig
 import com.dmm.bootcamp.yatter2023.domain.model.Account
 import com.dmm.bootcamp.yatter2023.domain.model.AccountId
 import com.dmm.bootcamp.yatter2023.domain.model.Username
