@@ -2,10 +2,10 @@ package com.dmm.bootcamp.yatter2023.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+val Orange20 = Color(0xFFFFE184)
+val Yellow20 = Color(0xFFFFE083)
+val Red20 = Color(0xFFF29494)
 
-val Purple40 = Color(0xFFFE910C)
-val PurpleGrey40 = Color(0xFFFFECB4)
-val Pink40 = Color(0xFFF24444)
+val Orange80 = Color(0xFFFE910C)
+val Yellow10 = Color(0xFFFFECB4)
+val Red40 = Color(0xFFF24444)

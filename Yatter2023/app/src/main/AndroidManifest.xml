@@ -30,6 +30,8 @@
         </activity>
 
 <!--    追加    -->
+        <activity android:name=".ui.profile.ProfileActivity" android:exported="true"></activity>
+
     </application>
 
 </manifest>

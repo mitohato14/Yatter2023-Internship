@@ -1,19 +1,21 @@
 package com.dmm.bootcamp.yatter2023.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material.Colors
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.ReadOnlyComposable
 
 private val darkColorScheme = darkColors(
-  primary = Purple80,
-  secondary = PurpleGrey80,
+  primary = Orange20,
+  secondary = Red20,
 )
 
 private val lightColorScheme = lightColors(
-  primary = Purple40,
-  secondary = PurpleGrey40,
+  primary = Orange80,
+  secondary = Red40,
 )
 
 @Composable
@@ -29,4 +31,16 @@ fun Yatter2023Theme(
     typography = Typography,
     content = content
   )
+}
+
+object Yatter2023Theme {
+  val colors: Colors
+    @Composable
+    @ReadOnlyComposable
+    get() = if (isSystemInDarkTheme()) darkColorScheme else lightColorScheme
+
+  val typography
+    @Composable
+    @ReadOnlyComposable
+  get()= Typography
 }
