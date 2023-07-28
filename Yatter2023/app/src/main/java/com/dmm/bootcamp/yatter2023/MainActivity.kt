@@ -8,7 +8,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
+import com.dmm.bootcamp.yatter2023.ui.profile.ProfileActivity
 import com.dmm.bootcamp.yatter2023.ui.theme.Yatter2023Theme
+import com.dmm.bootcamp.yatter2023.ui.timeline.PublicTimelineActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,5 +31,8 @@ class MainActivity : AppCompatActivity() {
     content.viewTreeObserver.addOnPreDrawListener { // Check if the initial data is ready.
       false
     }
+
+    startActivity(ProfileActivity.newIntent(this))
+    finish()
   }
 }

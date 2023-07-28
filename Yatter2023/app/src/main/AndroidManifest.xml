@@ -29,6 +29,18 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".ui.timeline.PublicTimelineActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Yatter2023">
+        </activity>
+
+        <activity
+            android:name=".ui.profile.ProfileActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Yatter2023">
+        </activity>
+
 <!--    追加    -->
     </application>
 
